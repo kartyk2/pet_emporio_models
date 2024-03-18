@@ -1,7 +1,7 @@
 from setuptools import setup
 
 setup(
-    name="pet_model_pckg",
+    name="pet_model_pkg",
     version="1.0",
     description="Pet Emporio models package",
     author="Kartik",
