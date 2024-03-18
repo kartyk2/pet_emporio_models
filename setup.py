@@ -7,5 +7,5 @@ setup(
     author="Kartik",
     author_email="kartik.gcelt@gmail.com",
     packages=["pet_model_pkg"],
-    install_requires=["wheel", "bar", "greek", "sqlalchemy", "psycopg2-binary", "sqlalchemy_utils"],
+    install_requires=["wheel", "bar", "greek", "sqlalchemy", "sqlalchemy_utils"],
 )

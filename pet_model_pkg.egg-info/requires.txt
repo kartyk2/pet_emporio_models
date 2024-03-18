@@ -2,5 +2,4 @@ wheel
 bar
 greek
 sqlalchemy
-psycopg2-binary
 sqlalchemy_utils
