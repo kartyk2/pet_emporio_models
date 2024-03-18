@@ -1,0 +1,11 @@
+README.md
+setup.py
+pet_model_pckg.egg-info/PKG-INFO
+pet_model_pckg.egg-info/SOURCES.txt
+pet_model_pckg.egg-info/dependency_links.txt
+pet_model_pckg.egg-info/requires.txt
+pet_model_pckg.egg-info/top_level.txt
+pet_model_pkg/__init__.py
+pet_model_pkg/brand_model.py
+pet_model_pkg/main.py
+pet_model_pkg/product_models.py
