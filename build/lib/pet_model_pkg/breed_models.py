@@ -1,9 +1,9 @@
 from sqlalchemy.orm import declarative_base
 from enum import Enum
 from sqlalchemy import Column
-from sqlalchemy.dialects.postgresql import TIMESTAMP 
+from sqlalchemy.dialects.postgresql import TIMESTAMP, UUID
 from sqlalchemy_utils import ChoiceType
-from uuid import UUID, uuid4
+from uuid import uuid4
 from datetime import datetime
 
 breed_base = declarative_base()
