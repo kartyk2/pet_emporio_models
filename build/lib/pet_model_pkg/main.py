@@ -61,7 +61,7 @@ def insert_basic_data(engine: Engine):
         """
         insert special diet data
         """
-        for data in FoodForm:
+        for data in LifeStage:
             add_breed = cnx.execute(
                 text("INSERT INTO public.lifestage("
                     "id, life_stage_name) "
@@ -75,7 +75,7 @@ def insert_basic_data(engine: Engine):
         """
         insert special diet data
         """
-        for data in FoodForm:
+        for data in SpecialDiet:
             add_breed = cnx.execute(
                 text("INSERT INTO public.specialdiet("
                     "id, special_diet_name) "
@@ -85,3 +85,6 @@ def insert_basic_data(engine: Engine):
                     "special_diet_name": data.value,
                 }
             )
+        
+        cnx.commit()
+        
