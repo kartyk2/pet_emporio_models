@@ -32,8 +32,8 @@ class ProductDetails(product_base):
     brand_id = Column(ARRAY(UUID), default=[])
     is_published = Column(Boolean)
     is_active = Column(Boolean)
-    created_at = Column(TIMESTAMP, default= func.now)
-    updated_at = Column(TIMESTAMP, default= func.now, onupdate= func.now)
+    created_at = Column(TIMESTAMP, default= datetime.now)
+    updated_at = Column(TIMESTAMP, default= datetime.now, onupdate= datetime.now)
 
 
 class ProductInventory(product_base):
@@ -44,8 +44,8 @@ class ProductInventory(product_base):
     available_quantity = Column(String)
     supply_chain = Column(String)
     expected_restock = Column(String)
-    created_at = Column(TIMESTAMP, default= func.now)
-    updated_at = Column(TIMESTAMP, default= func.now, onupdate= func.now)
+    created_at = Column(TIMESTAMP, default= datetime.now)
+    updated_at = Column(TIMESTAMP, default= datetime.now, onupdate= datetime.now)
 
 
 class ProductImages(product_base):
@@ -53,7 +53,7 @@ class ProductImages(product_base):
     id = Column(UUID, default=uuid.uuid1, primary_key=True)
     product_id = Column(UUID, ForeignKey(ProductDetails.id))
     product_image = Column(String,)
-    added_on = Column(TIMESTAMP, default= func.now)
+    added_on = Column(TIMESTAMP, default= datetime.now)
 
 
 class Variant(product_base):
@@ -68,8 +68,8 @@ class Variant(product_base):
     expected_restock = Column(TIMESTAMP)
     is_default= Column(Boolean, default= False)
 
-    created_at = Column(TIMESTAMP, default= func.now)
-    updated_at = Column(TIMESTAMP, default= func.now, onupdate= func.now)
+    created_at = Column(TIMESTAMP, default= datetime.now)
+    updated_at = Column(TIMESTAMP, default= datetime.now, onupdate= datetime.now)
 
 
 class ProductReview(product_base):

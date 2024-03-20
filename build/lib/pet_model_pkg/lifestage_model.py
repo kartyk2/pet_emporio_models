@@ -20,5 +20,5 @@ class LifeStage(lifestage_base):
     __tablename__ = "lifestage"    
     id = Column(UUID(as_uuid=True),default= uuid4,primary_key=True)
     life_stage_name = Column(ChoiceType(choices=LifeStages), nullable= False)
-    created_at = Column(TIMESTAMP,default=func.now)
-    updated_at = Column(TIMESTAMP,default=func.now, onupdate=func.now)
+    created_at = Column(TIMESTAMP,default=datetime.now)
+    updated_at = Column(TIMESTAMP,default=datetime.now, onupdate=datetime.now)
