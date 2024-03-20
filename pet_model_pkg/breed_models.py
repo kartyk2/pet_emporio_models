@@ -1,0 +1,25 @@
+from sqlalchemy.orm import declarative_base
+from enum import Enum
+from sqlalchemy import Column
+from sqlalchemy.dialects.postgresql import TIMESTAMP 
+from sqlalchemy_utils import ChoiceType
+from uuid import UUID, uuid4
+from datetime import datetime
+
+breed_base = declarative_base()
+
+
+class BreedSize(Enum):
+    EXTRASMALL:str = "extra_small"
+    SMALL:str = "small"
+    MEDIUM:str = "medium"
+    LARGE:str = "large"
+    GIANT:str = "giant"
+
+
+class BreedSizeModel(breed_base):
+    __tablename__ = "breed_size"
+    id = Column(UUID(as_uuid=True), default= uuid4, primary_key=True)
+    breed_size_name = Column(ChoiceType(BreedSize), default=BreedSize.SMALL.value)
+    created_at = Column(TIMESTAMP, default=datetime.now)
+    updated_at = Column(TIMESTAMP, default=datetime.now, onupdate=datetime.now)
