@@ -9,7 +9,7 @@ from pet_model_pkg.special_diet_models import special_diet_base
 
 from pet_model_pkg.breed_models import BreedSize
 from pet_model_pkg.food_form_models import FoodForm
-from pet_model_pkg.lifestage_model import LifeStage
+from pet_model_pkg.lifestage_model import LifeStages
 from pet_model_pkg.special_diet_models import SpecialDiet
 
 from uuid import uuid4
@@ -61,7 +61,7 @@ def insert_basic_data(engine: Engine):
         """
         insert special diet data
         """
-        for data in LifeStage:
+        for data in LifeStages:
             add_breed = cnx.execute(
                 text("INSERT INTO public.lifestage("
                     "id, life_stage_name) "

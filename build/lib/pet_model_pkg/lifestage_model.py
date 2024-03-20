@@ -9,7 +9,7 @@ from datetime import datetime
 lifestage_base = declarative_base()
 
  
-class LifeStage(Enum):
+class LifeStages(Enum):
     PUPPY:str = "puppy"
     KITTEN:str = "kitten"
     ADULT:str = "adult"
@@ -19,6 +19,6 @@ class LifeStage(Enum):
 class LifeStage(lifestage_base):
     __tablename__ = "lifestage"    
     id = Column(UUID(as_uuid=True),default= uuid4,primary_key=True)
-    life_stage_name = Column(ChoiceType(choices=LifeStage), nullable= False)
+    life_stage_name = Column(ChoiceType(choices=LifeStages), nullable= False)
     created_at = Column(TIMESTAMP,default=datetime.now)
     updated_at = Column(TIMESTAMP,default=datetime.now, onupdate=datetime.now)
