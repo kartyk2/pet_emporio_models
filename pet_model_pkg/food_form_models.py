@@ -1,6 +1,6 @@
 from sqlalchemy.orm import declarative_base
 from enum import Enum
-from sqlalchemy import Column
+from sqlalchemy import func, Column
 from sqlalchemy.dialects.postgresql import TIMESTAMP, UUID
 from sqlalchemy_utils import ChoiceType
 from uuid import uuid4
@@ -22,5 +22,5 @@ class FoodFormModel(food_form_base):
     __tablename__="foodform"
     id = Column(UUID(as_uuid=True),default= uuid4,primary_key=True)
     food_form_name= Column(ChoiceType(choices=FoodForm))
-    created_at = Column(TIMESTAMP,default=datetime.now)
-    updated_at = Column(TIMESTAMP,default=datetime.now,onupdate=datetime.now)
+    created_at = Column(TIMESTAMP,default=func.now)
+    updated_at = Column(TIMESTAMP,default=func.now,onupdate=func.now)

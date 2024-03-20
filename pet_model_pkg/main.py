@@ -1,4 +1,4 @@
-from sqlalchemy import Engine, text
+from sqlalchemy import func, Engine, text
 from pet_model_pkg.brand_model import pet_and_brand_base
 from pet_model_pkg.breed_models import breed_base
 from pet_model_pkg.food_form_models import food_form_base

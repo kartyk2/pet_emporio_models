@@ -1,4 +1,4 @@
-from sqlalchemy import Column, String, UUID, ForeignKey, Boolean, TIMESTAMP
+from sqlalchemy import func, Column, String, UUID, ForeignKey, Boolean, TIMESTAMP
 from sqlalchemy.dialects.postgresql import UUID
 from sqlalchemy.orm import declarative_base
 from datetime import datetime
@@ -24,8 +24,8 @@ class User(user_base):
     profile_picture = Column(String)
     is_social = Column(Boolean, default=False)
 
-    created_at = Column(TIMESTAMP, default=datetime.now)
-    updated_at = Column(TIMESTAMP, default=datetime.now, onupdate=datetime.now)
+    created_at = Column(TIMESTAMP, default=func.now)
+    updated_at = Column(TIMESTAMP, default=func.now, onupdate=func.now)
 
 
 class SocialUser(user_base):
