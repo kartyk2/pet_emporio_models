@@ -1,4 +1,5 @@
-from sqlalchemy import func, (
+from sqlalchemy import (
+    func,
     Column,
     String,
     UUID,
